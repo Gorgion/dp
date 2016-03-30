@@ -1,0 +1,12 @@
+cz\muni\fi\dp\core\repository\DummyRepositoryCustom.class
+cz\muni\fi\dp\core\repository\generic\CustomJpaRepositoryFactoryBean$RepositoryFactory.class
+cz\muni\fi\dp\core\entity\DummyEntity.class
+cz\muni\fi\dp\core\repository\generic\CustomJpaRepositoryImpl.class
+cz\muni\fi\dp\core\repository\DummyRepository.class
+cz\muni\fi\dp\core\util\IbaLiferayPlaceholderConfigurer.class
+cz\muni\fi\dp\core\util\ApplicationDBUpgrader.class
+cz\muni\fi\dp\core\repository\DummyRepositoryCustomImpl.class
+cz\muni\fi\dp\core\service\DummyServiceImpl.class
+cz\muni\fi\dp\core\repository\generic\CustomJpaRepository.class
+cz\muni\fi\dp\core\repository\generic\GenericJpaRepository.class
+cz\muni\fi\dp\core\repository\generic\CustomJpaRepositoryFactoryBean.class

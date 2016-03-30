@@ -1,0 +1,65 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd" updateCheck="false">
+
+    <diskStore path="java.io.tmpdir/ibapackage/cache"/>
+
+    <!-- EXAMPLE:
+    <cache name="dummyEntityById.CACHE"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false"
+           maxElementsOnDisk="10000000"
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+
+        < !- - <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                properties="replicatePuts=false,replicateUpdatesViaCopy=false"
+                propertySeparator=","
+                /> - - >
+
+    </cache>
+    -->
+
+    <!-- !!! These settings will be applied to caches created PROGRAMMATICALLY using CacheManager.add(String cacheName). This element is optional. This is not default for other cache TAGs! -->
+    <defaultCache
+            maxElementsInMemory="1000"
+            eternal="false"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="3600"
+            overflowToDisk="false"
+            maxElementsOnDisk="10000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+    </defaultCache>
+
+
+    <cache name="dummy.all.CACHE"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false"
+           maxElementsOnDisk="10000000"
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+
+    <cache name="dummy.byId.CACHE"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false"
+           maxElementsOnDisk="10000000"
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+
+</ehcache>

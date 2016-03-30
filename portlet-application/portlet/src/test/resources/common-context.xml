@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!-- This will wrap all controllers into Mockito spy object -->
+    <bean class="eu.ibacz.commons.test.MockitoSpyBeanPostProcessor"/>
+
+    <!--<bean id="helloViewController" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg>
+            <bean class="cz.muni.fi.dp.web.portlet.hello.HelloViewController"/>
+        </constructor-arg>
+    </bean>-->
+
+</beans>

@@ -1,0 +1,4 @@
+cz\muni\fi\dp\core\test\JdbcTestUtils.class
+cz\muni\fi\dp\core\test\AbstractTest.class
+cz\muni\fi\dp\core\service\DummyServiceImplTest.class
+cz\muni\fi\dp\core\repository\DummyRepositoryTest.class

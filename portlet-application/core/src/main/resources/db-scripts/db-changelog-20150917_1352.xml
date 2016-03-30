@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet author="anonymous" id="hibernate_sequence"
+               objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle">
+        <createSequence cycle="false"
+                        incrementBy="1" maxValue="9999999999999999999999999999" minValue="1"
+                        ordered="false" sequenceName="HIBERNATE_SEQUENCE" startValue="1" />
+    </changeSet>
+
+    <changeSet id="create_table_dummy" author="anonymous">
+        <createTable tableName="DUMMY">
+            <column name="id" type="${long.type}" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="dummy_name" type="${normal.string.type}"/>
+            <column name="dummy_email" type="${normal.string.type}"/>
+        </createTable>
+    </changeSet>
+
+
+
+</databaseChangeLog>

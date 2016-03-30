@@ -1,0 +1,55 @@
+.iba-detail .detail-heading {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+ 
+.iba-detail .fieldset {
+    border:1px solid #999;
+    padding:5px 20px;
+    margin:2em auto;
+    font-size:1em;
+    position:relative;
+    padding-top: 1em;
+}
+ 
+.iba-detail .fieldset .legend {
+    position:absolute;
+    padding:4px 8px;
+    top:-1em;
+    left:1.25em;
+    font-weight: bold;
+    background-color: #fff;
+    color:#000;
+}
+ 
+.iba-detail .fieldset>.column {
+    float: left;
+    margin-right: 1em;
+}
+ 
+.iba-detail .fieldset>.clear {
+    clear: both;
+}
+ 
+.iba-detail .detail-field {
+    margin: 5px 0;
+}
+ 
+.iba-detail .field-label {
+    clear: left;
+    display: block;
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    text-align: left; /*right*/
+}
+ 
+.iba-detail .field-value {
+    display: block;
+    overflow: hidden;
+}
+ 
+.iba-detail ul.field-value {
+    padding-left: 1.5em;
+}

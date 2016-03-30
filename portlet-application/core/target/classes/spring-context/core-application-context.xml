@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-4.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <import resource="core-liquibase.xml"/>
+
+    <import resource="core-database.xml"/>
+
+    <import resource="core-jpa.xml"/>
+
+    <import resource="core-jpa-repository.xml"/>
+
+    <import resource="core-services.xml"/>
+
+    <import resource="core-cache.xml"/>
+
+
+    <!-- Enables @Autowired annotation -->
+    <context:annotation-config />
+
+    <!-- Looks for any annotated Spring beans -->
+    <context:component-scan base-package="cz.muni.fi.dp.core" />
+
+    <!-- To enable AspectJ AOP -->
+    <!-- <aop:aspectj-autoproxy/> -->
+
+    <!-- Allows use asynchronous metods -->
+    <!-- <task:annotation-driven /> -->
+
+    <!-- Default Spring Message Source for application (backend notifications, ...) -->
+    <!--
+    <bean id="coreMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+        <property name="cacheSeconds" value="3600" />
+        <property name="useCodeAsDefaultMessage" value="true" />
+        <property name="fallbackToSystemLocale" value="false" />
+        <property name="basenames">
+            <list>
+                <value>classpath:content/Language-ext</value>
+                <value>classpath:content/common-messages</value>
+                <value>classpath:content/localized-enums</value>
+            </list>
+        </property>
+    </bean>
+    -->
+    <!-- Inicializace LocalizedEnumUtil. Pozor - lokalizované hlášky musí být v core-balíku (localized-enums), aby byly dostupné pro front-end i backend
+    <bean id="localizedEnumUtil" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass" value="eu.ibacz.commons.util.LocalizedEnumUtil"/>
+        <property name="targetMethod" value="setSpringMessageSource" />
+        <property name="arguments">
+            <list>
+                <ref bean="coreMessageSource" />
+            </list>
+        </property>
+    </bean>
+   -->
+</beans>

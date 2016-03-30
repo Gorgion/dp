@@ -1,0 +1,40 @@
+<%-- ==========================================================================================
+ *   IBA CZ Confidential
+ *   Copyright IBA CZ 2014 ALL RIGHTS RESERVED
+ *   The source code for this program is not published or otherwise divested of its trade secrets.
+ * =============================================================================================
+
+Společný předek pro všecchny JSP. Deklaruje základní používané TagLiby a proměnné.
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@ taglib prefix="portlet" uri="http://java.sun.com/portlet_2_0" %>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<%@taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui"%>
+<%@taglib prefix="liferay-theme" uri="http://liferay.com/tld/theme"%>
+<%@taglib prefix="liferay-portlet" uri="http://liferay.com/tld/portlet" %>
+<%@taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+<%@taglib prefix="iba-form" uri="http://tags.ibacz.eu/ibaform"%>
+<%@taglib prefix="iba-detail" uri="http://tags.ibacz.eu/ibadetail"%>
+<%@taglib prefix="iba-common" uri="http://tags.ibacz.eu/ibacommontags"%>
+
+<%@taglib prefix="iba" uri="http://www.ibacz.eu/tags/iba" %>
+
+<portlet:defineObjects />
+<liferay-theme:defineObjects />
+
+<fmt:setLocale value="<%=locale%>" />
+<fmt:setTimeZone value="<%=timeZone%>" />
+
+<c:set var="ns"><portlet:namespace/></c:set>
+<c:set var="contextPath"><%=request.getContextPath()%></c:set>
+<c:set var="imagePath"><%=themeDisplay.getPathImage()%></c:set>
+

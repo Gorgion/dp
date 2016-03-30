@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+    <compatibility>
+        <version>6.2.2+</version>
+    </compatibility>
+    <theme id="dp-example-theme" name="dp-example-theme" >
+        <settings>
+            <setting configurable="false" key="mobile-layout" value="false" />
+            <setting configurable="true" key="bullet-style" options="dots,arrows" type="select" value="arrows" />
+            <setting configurable="true" key="portlet-setup-show-borders-default" type="checkbox" value="true" />
+            <setting configurable="true" key="msg-some-localized-setting-key" type="text" value="This is default value, you can change it" />
+        </settings>
+    </theme>
+</look-and-feel>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
+
+	<classpath>
+		<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/ext/ext-dp-ext-web/target/classes">
+		</dir>
+	</classpath>
+
+	<web>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/ext/ext-dp-ext-web/src/main/webapp">
+				<exclude name="WEB-INF/*.xml"/>
+				<exclude name="WEB-INF/*.properties"/>
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/ext/ext-dp-ext-web/target/ext-dp-ext-web-1.0-SNAPSHOT/">
+				<include name="WEB-INF/liferay-portlet-ext.xml"/>
+				<include name="WEB-INF/portlet-ext.xml"/>
+				<include name="WEB-INF/remoting-servlet-ext.xml"/>
+				<include name="WEB-INF/struts-config-ext.xml"/>
+				<include name="WEB-INF/tiles-defs-ext.xml"/>
+				<include name="WEB-INF/web.xml"/>
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/ext/ext-dp-ext-web/src/main/webapp">
+			</dir>
+		</link>
+	</web>
+
+</application>

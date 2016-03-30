@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cz.muni.fi.dp</groupId>
+        <artifactId>portlet-application</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>dp-portlet-application</artifactId>
+    <name>${project.artifactId}</name>
+    <description>Description of this portlet app</description>
+
+    <packaging>war</packaging>
+
+    <properties>
+        <sdk.root>${project.parent.parent.basedir}</sdk.root>
+        <liferay.app.version.properties.text>plugin=${project.name}${line.separator}version=${project.version}${line.separator}gitbranch=${git.branch}${line.separator}buildDate=${maven.build.timestamp}${line.separator}commitDate=${git.commit.time}</liferay.app.version.properties.text>
+    </properties>
+
+
+    <dependencies>
+        <!-- Package dependencies -->
+
+        <dependency>
+            <groupId>cz.muni.fi.dp</groupId>
+            <artifactId>dp-interface</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cz.muni.fi.dp</groupId>
+            <artifactId>dp-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.commons</groupId>
+            <artifactId>iba-commons-portlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.commons</groupId>
+            <artifactId>iba-commons-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.tags</groupId>
+            <artifactId>iba-common-tags</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.tags</groupId>
+            <artifactId>iba-detail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.tags</groupId>
+            <artifactId>iba-form</artifactId>
+        </dependency>
+
+        <!-- Other dependencies -->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.portlet</groupId>
+            <artifactId>portlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.portlet</groupId>
+            <artifactId>portlet-taglib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>portal-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>util-taglib</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc-portlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.ibacz.commons</groupId>
+            <artifactId>iba-commons-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-servlet_3.0_spec</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <!--
+    <profiles>
+        <profile>
+            <id>minify</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>net.alchim31.maven</groupId>
+                        <artifactId>yuicompressor-maven-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compress</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            < ! - - <linebreakpos>999999</linebreakpos> - - >
+                            <jswarn>false</jswarn>
+                            <excludes>
+                                <exclude>**/compressed.js</exclude>
+                            </excludes>
+                            <aggregations>
+                                <aggregation>
+                                    <removeIncluded>true</removeIncluded>
+                                    <insertNewLine>false</insertNewLine>
+                                    <output>${project.build.directory}/${project.build.finalName}/js/compressed.js
+                                    </output>
+                                    <includes>
+                                        <inlcude>components/*.js</inlcude>
+                                        <inlcude>global-init-min.js</inlcude>
+                                        <inlcude>portlets/common/*.js</inlcude>
+                                        <inlcude>portlets/**</inlcude>
+                                    </includes>
+                                    <excludes>
+                                        <exclude>**/compressed.js</exclude>
+                                    </excludes>
+                                </aggregation>
+                            </aggregations>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <excludes>js/**</excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    -->
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>src-prepare</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <tasks>
+                                <echo file="${project.basedir}/target/classes/version.properties" message="${liferay.app.version.properties.text}" />
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- kopirovat WAR pri pouziti profilu local-deploy -->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-war</id>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <finalName>${war.filename}</finalName>
+
+    </build>
+
+</project>

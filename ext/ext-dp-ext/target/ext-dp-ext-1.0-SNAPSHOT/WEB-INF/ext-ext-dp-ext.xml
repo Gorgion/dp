@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<ext-info>
+	<servlet-context-name>ext-dp-ext</servlet-context-name>
+	<files>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-ext-dp-ext-util-bridges.jar</file>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-ext-dp-ext-util-java.jar</file>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-ext-dp-ext-util-taglib.jar</file>
+		<file>ext-impl/classes/rebel.xml</file>
+		<file>ext-service/classes/rebel.xml</file>
+		<file>ext-web/docroot/WEB-INF/classes/rebel.xml</file>
+		<file>ext-web/docroot/WEB-INF/liferay-portlet-ext.xml</file>
+		<file>ext-web/docroot/WEB-INF/portlet-ext.xml</file>
+		<file>ext-web/docroot/WEB-INF/remoting-servlet-ext.xml</file>
+		<file>ext-web/docroot/WEB-INF/struts-config-ext.xml</file>
+		<file>ext-web/docroot/WEB-INF/tiles-defs-ext.xml</file>
+		<file>ext-web/docroot/WEB-INF/web.xml</file>
+		<file>sql/fake.sql</file>
+	</files>
+</ext-info>

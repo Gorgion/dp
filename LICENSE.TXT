@@ -1,0 +1,8 @@
+ ===========================================================================
+ IBA CZ Confidential
+ 
+ (c) Copyright IBA CZ ${year} ALL RIGHTS RESERVED
+ The source code for this program is not published or otherwise
+ divested of its trade secrets. 
+ ===========================================================================
+ 

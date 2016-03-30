@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cz.muni.fi.dp</groupId>
+        <artifactId>dp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>portlet-application</artifactId>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <sdk.root>${project.parent.basedir}</sdk.root>
+        <license.plugin.year>2014</license.plugin.year>
+    </properties>
+    <inceptionYear>2014</inceptionYear>
+
+
+    <build>
+        <!--
+            This section lists plugins that will be inherited and run by all child modules
+        -->
+        <plugins>
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.9.0</version>
+                <configuration>
+                    <header>${sdk.root}/LICENSE.TXT</header>
+                    <failIfMissing>false</failIfMissing>
+                    <strictCheck>true</strictCheck>
+                    <encoding>UTF-8</encoding>
+                    <includes>
+                        <include>src/main/java/**</include>
+                        <!--  <include>src/main/webapp/WEB-INF/jsp/**</include> -->
+                    </includes>
+                    <properties>
+                        <year>${license.plugin.year}</year>
+                    </properties>
+                    <mapping>
+                        <jspf>DYNASCRIPT_STYLE</jspf>
+                    </mapping>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+  <modules>
+    <module>interface</module>
+    <module>core</module>
+    <module>portlet</module>
+  </modules>
+</project>

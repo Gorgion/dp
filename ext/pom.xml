@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cz.muni.fi.dp</groupId>
+        <artifactId>dp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ext-dp</artifactId>
+    <name>${project.artifactId}</name>
+    <description>Upravy portalu.</description>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <sdk.root>${project.parent.basedir}</sdk.root>
+        <folders.base.name>${project.artifactId}</folders.base.name>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.liferay.maven.plugins</groupId>
+                <artifactId>liferay-maven-plugin</artifactId>
+                <version>${liferay.version}</version>
+                <configuration>
+                    <pluginName>${project.artifactId}</pluginName>
+                    <pluginType>ext</pluginType>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>javax.portlet</groupId>
+            <artifactId>portlet-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+  <modules>
+    <module>ext-dp-ext</module>
+    <module>ext-dp-ext-impl</module>
+    <module>ext-dp-ext-lib-global</module>
+    <module>ext-dp-ext-lib-portal</module>
+    <module>ext-dp-ext-service</module>
+    <module>ext-dp-ext-util-bridges</module>
+    <module>ext-dp-ext-util-java</module>
+    <module>ext-dp-ext-util-taglib</module>
+    <module>ext-dp-ext-web</module>
+  </modules>
+</project>

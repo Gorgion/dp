@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
+
+	<classpath>
+		<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/portlet-application/portlet/target/classes">
+		</dir>
+	</classpath>
+
+	<web>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/portlet-application/portlet/src/main/webapp">
+				<exclude name="WEB-INF/*.xml"/>
+				<exclude name="WEB-INF/*.properties"/>
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/portlet-application/portlet/target/dp-portlet-application-1.0-SNAPSHOT/">
+				<include name="WEB-INF/liferay-display.xml"/>
+				<include name="WEB-INF/liferay-hook.xml"/>
+				<include name="WEB-INF/liferay-plugin-package.xml"/>
+				<include name="WEB-INF/liferay-portlet.xml"/>
+				<include name="WEB-INF/portlet.xml"/>
+				<include name="WEB-INF/web.xml"/>
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="C:/Users/tomas.svoboda/Documents/Dev/dpl/dp/portlet-application/portlet/src/main/webapp">
+			</dir>
+		</link>
+	</web>
+
+</application>
