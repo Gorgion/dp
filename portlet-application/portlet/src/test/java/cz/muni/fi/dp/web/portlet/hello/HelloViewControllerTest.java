@@ -11,6 +11,7 @@
 
 package cz.muni.fi.dp.web.portlet.hello;
 
+import cz.muni.fi.dp.iface.service.DocumentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -27,7 +28,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class HelloViewControllerTest {
 
     @Mock
-    private cz.muni.fi.dp.iface.service.DummyService dummyService;
+    private DocumentService dummyService;
 
     @InjectMocks
     private HelloViewController controller;
@@ -41,7 +42,7 @@ public class HelloViewControllerTest {
         RenderResponse response = new MockRenderResponse();
 
         // prepare mock
-        List<DummyDto> dummyDTOs = Arrays.asList(new DummyDto());
+        List<DocumentDTO> dummyDTOs = Arrays.asList(new DocumentDTO());
         when(dummyService.getAllDummy()).thenReturn(dummyDTOs);
 
         // call tested controller

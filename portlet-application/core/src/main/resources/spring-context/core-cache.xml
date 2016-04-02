@@ -8,15 +8,14 @@
             ">
 
     <!-- Ehcache library setup -->
-    <cache:annotation-driven cache-manager="ibaCacheManager" key-generator="ibaKeyGenerator"/>
-    <bean id="ibaKeyGenerator" class="org.springframework.cache.interceptor.SimpleKeyGenerator" /> <!-- je mozne vytvorit potomka a zahrnout Threadlocal promenne -->
-    <bean id="ibaCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager" ref="ibaCacheManagerFactory"/>
+    <cache:annotation-driven cache-manager="cacheManager" key-generator="keyGenerator"/>
+    <bean id="keyGenerator" class="org.springframework.cache.interceptor.SimpleKeyGenerator" />
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="cacheManagerFactory"/>
     </bean>
-    <bean id="ibaCacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+    <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
         <property name="configLocation" value="classpath:core-ehcache.xml"/>
-        <property name="cacheManagerName" value="IBAPACKAGE"/> <!-- Od verze 2.5 je nutné uvádět jméno, jinak se pobije s portálovým CacheManagerem -->
-        <!--<property name="cacheManagerName" value="$${ibapackage.app.name}"/>--> <!-- Od verze 2.5 je nutné uvádět jméno, jinak se pobije s portálovým CacheManagerem -->
-        <property name="shared" value="false"/> <!-- cache-manager beanu je mozne sdilet v ramci cele JVM! -->
+        <property name="cacheManagerName" value="DPPACKAGE"/>
+        <property name="shared" value="false"/>
     </bean>
 </beans>

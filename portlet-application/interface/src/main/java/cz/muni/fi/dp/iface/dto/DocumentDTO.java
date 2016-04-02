@@ -15,7 +15,7 @@ import eu.ibacz.commons.dto.BaseDTO;
 /**
  * Data Transfer Object for Dummy entity.
  */
-public class DummyDto extends BaseDTO<Long> {
+public class DocumentDTO extends BaseDTO<Long> {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,10 +23,10 @@ public class DummyDto extends BaseDTO<Long> {
     private String name;
     private String email;
 
-    public DummyDto() {
+    public DocumentDTO() {
     }
 
-    public DummyDto(Long id, String name, String email) {
+    public DocumentDTO(Long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;

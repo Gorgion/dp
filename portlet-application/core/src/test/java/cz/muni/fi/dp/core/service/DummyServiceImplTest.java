@@ -8,14 +8,14 @@
  * ===========================================================================*/
 package cz.muni.fi.dp.core.service;
 
+import cz.muni.fi.dp.iface.dto.DocumentDTO;
 import org.junit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 
 import cz.muni.fi.dp.core.test.AbstractTest;
 import cz.muni.fi.dp.core.test.JdbcTestUtils;
-import cz.muni.fi.dp.iface.dto.DummyDto;
-import cz.muni.fi.dp.iface.service.DummyService;
+import cz.muni.fi.dp.iface.service.DocumentService;
 
 import static org.junit.Assert.*;
 
@@ -25,7 +25,7 @@ import static org.junit.Assert.*;
 public class DummyServiceImplTest extends AbstractTest {
     
     @Autowired
-    private DummyService dummyService;
+    private DocumentService dummyService;
     
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -48,22 +48,22 @@ public class DummyServiceImplTest extends AbstractTest {
     public void testCreateDummy() {
         final String name = "Karel";
         final String email = "Karel@example.com";
-        DummyDto dummyDto = new DummyDto(null, name, email);
+        DocumentDTO documentDTO = new DocumentDTO(null, name, email);
 
-        long id = dummyService.createDummy(dummyDto);
-        DummyDto createdDummyDto = dummyService.getDummyById(id);
+        long id = dummyService.createDummy(documentDTO);
+        DocumentDTO createdDocumentDTO = dummyService.getDummyById(id);
         
-        assertTrue(createdDummyDto.getId() != null);
-        assertEquals(name, createdDummyDto.getName());
+        assertTrue(createdDocumentDTO.getId() != null);
+        assertEquals(name, createdDocumentDTO.getName());
     }
     
     @Test
     public void testGetDummyById() {
-        DummyDto loadedDummyDto = dummyService.getDummyById(-1L);
+        DocumentDTO loadedDocumentDTO = dummyService.getDummyById(-1L);
 
         // test data created in dummy.sql - setUp() mathod
-        assertEquals(Long.valueOf(-1L), loadedDummyDto.getId());
-        assertEquals("Bedřich", loadedDummyDto.getName());
-        assertEquals("bedrich@example.com", loadedDummyDto.getEmail());
+        assertEquals(Long.valueOf(-1L), loadedDocumentDTO.getId());
+        assertEquals("Bedřich", loadedDocumentDTO.getName());
+        assertEquals("bedrich@example.com", loadedDocumentDTO.getEmail());
     }
 }

@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
-import cz.muni.fi.dp.iface.dto.DummyDto;
-import cz.muni.fi.dp.iface.service.DummyService;
+import cz.muni.fi.dp.iface.dto.DocumentDTO;
+import cz.muni.fi.dp.iface.service.DocumentService;
 import cz.muni.fi.dp.web.portlet.hello.pto.DummyPto;
 import eu.ibacz.tags.portletmessages.PortletMessages;
 
@@ -47,7 +47,7 @@ public class HelloViewController {
     private static final Logger LOG = Logger.getLogger(HelloViewController.class);
 
     @Autowired
-    private DummyService service;
+    private DocumentService service;
 
     @RenderMapping
     public String defaultView(Model model, RenderRequest request, RenderResponse response) {
@@ -93,7 +93,7 @@ public class HelloViewController {
             Model model, RenderRequest request, RenderResponse response) {
 
         if (!model.containsAttribute(ATTR_DUMMY_PTO)) {
-            DummyDto s = service.getDummyById(id);
+            DocumentDTO s = service.getDummyById(id);
             DummyPto pto = convertToPto(s);
             model.addAttribute(ATTR_DUMMY_PTO, pto);
         }
@@ -102,7 +102,7 @@ public class HelloViewController {
         return VIEW_EDIT_FORM;
     }
 
-    private DummyPto convertToPto(DummyDto s) {
+    private DummyPto convertToPto(DocumentDTO s) {
         DummyPto pto = new DummyPto();
         pto.setId(s.getId());
         pto.setName(s.getName());
@@ -118,7 +118,7 @@ public class HelloViewController {
             ActionResponse response) {
 
         if (!result.hasErrors()) {
-            DummyDto dto = new DummyDto(null, pto.getName(), pto.getEmail());
+            DocumentDTO dto = new DocumentDTO(null, pto.getName(), pto.getEmail());
 
             long id = service.createDummy(dto);
 
@@ -141,7 +141,7 @@ public class HelloViewController {
             ActionResponse response) {
 
         if (!result.hasErrors()) {
-            DummyDto dto = service.getDummyById(pto.getId());
+            DocumentDTO dto = service.getDummyById(pto.getId());
             dto.setName(pto.getName());
             dto.setEmail(pto.getEmail());
 
@@ -165,7 +165,7 @@ public class HelloViewController {
             ActionRequest request,
             ActionResponse response) {
 
-        DummyDto dto = service.getDummyById(id);
+        DocumentDTO dto = service.getDummyById(id);
         service.deleteDummyById(id);
 
         PortletMessages.addSuccessMsg(request, "msg-hello-dummy-deleted", new String[]{dto.getName()});

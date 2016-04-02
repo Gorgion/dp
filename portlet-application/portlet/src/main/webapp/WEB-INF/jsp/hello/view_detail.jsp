@@ -7,9 +7,9 @@
 JSP pro výpis detailu.
 
 Parametry:
-    DummyDto dummyDto   - DTO objekt pro výpis
+    DummyDto documentDTO   - DTO objekt pro výpis
 --%>
-<%--@elvariable id="dummyDto" type="cz.muni.fi.dp.iface.dto.DummyDto"--%>
+<%--@elvariable id="dummyDto" type="cz.muni.fi.dp.iface.dto.DocumentDTO"--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="../init.jspf" %>
@@ -18,7 +18,7 @@ Parametry:
 
 <portlet:renderURL var="editUrl">
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_EDIT_FORM %>" />
-    <portlet:param name="<%= PARAM_ID %>" value="${dummyDto.id}" />
+    <portlet:param name="<%= PARAM_ID %>" value="${documentDTO.id}" />
 </portlet:renderURL>
 <portlet:renderURL var="backUrl" />
 

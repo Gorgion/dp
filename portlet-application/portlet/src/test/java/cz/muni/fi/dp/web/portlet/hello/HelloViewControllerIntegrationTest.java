@@ -21,7 +21,7 @@ import org.junit.Test;
 
 import eu.ibacz.commons.test.PortletIntegrationTest;
 import eu.ibacz.commons.test.PortletItegrationTestConfiguration;
-import cz.muni.fi.dp.iface.service.DummyService;
+import cz.muni.fi.dp.iface.service.DocumentService;
 
 /**
  * This is an example of integration test of spring framework and portlet controllers
@@ -39,7 +39,7 @@ public class HelloViewControllerIntegrationTest extends PortletIntegrationTest {
     public static final String MOCK_APPLICATION_CONTEXT_XML
             = "mock-applicationContext.xml";
 
-    private DummyService dummyService;
+    private DocumentService dummyService;
     private HelloViewController controller;
 
     @BeforeClass
@@ -56,7 +56,7 @@ public class HelloViewControllerIntegrationTest extends PortletIntegrationTest {
 
     @Before
     public void setUp() {
-        dummyService = getBean(DummyService.class);
+        dummyService = getBean(DocumentService.class);
         controller = getBean(HelloViewController.class);
     }
 
@@ -69,7 +69,7 @@ public class HelloViewControllerIntegrationTest extends PortletIntegrationTest {
         renderRequest.setParameter(PARAM_ID, "0");
 
         // prepare mock
-        when(dummyService.getDummyById(0L)).thenReturn(new DummyDto());
+        when(dummyService.getDummyById(0L)).thenReturn(new DocumentDTO());
 
         // call dispatcher portlet - this will call controller
         // it will process all annotations to determine which method
