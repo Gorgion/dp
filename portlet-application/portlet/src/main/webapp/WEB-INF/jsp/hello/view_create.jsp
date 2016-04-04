@@ -13,7 +13,7 @@ Parametry:
 
 <%@include file="../init.jspf" %>
 
-<%@page import="static cz.muni.fi.dp.web.portlet.hello.HelloConstants.*" %>
+<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.HelloConstants.*" %>
 
 <portlet:actionURL var="actionUrl" name="<%= ACTION_CREATE %>" />
 <portlet:renderURL var="addEmailUrl">

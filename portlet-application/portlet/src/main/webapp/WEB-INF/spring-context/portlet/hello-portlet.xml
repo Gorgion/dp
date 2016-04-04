@@ -11,7 +11,7 @@
 
     <import resource="common-context.xml" />
 
-    <context:component-scan base-package="cz.muni.fi.dp.web.portlet.hello.**" />
+    <context:component-scan base-package="cz.muni.fi.dp.web.portlet.documentlisting.**" />
 
     <!-- Spring MVC Message Source -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">

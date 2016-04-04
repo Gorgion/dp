@@ -8,7 +8,7 @@
  *  ===========================================================================
  *
  */
-package cz.muni.fi.dp.web.portlet.hello;
+package cz.muni.fi.dp.web.portlet.documentlisting;
 
 import cz.muni.fi.dp.web.portlet.Constants;
 
@@ -17,10 +17,10 @@ import cz.muni.fi.dp.web.portlet.Constants;
  */
 public class HelloConstants extends Constants {
 
-    public static final String VIEW_MAIN = "hello/view";
-    public static final String VIEW_CREATE_FORM = "hello/view_create";
-    public static final String VIEW_EDIT_FORM = "hello/view_edit";
-    public static final String VIEW_DETAIL = "hello/view_detail";
+    public static final String VIEW_MAIN = "documentlisting/view";
+    public static final String VIEW_CREATE_FORM = "documentlisting/view_create";
+    public static final String VIEW_EDIT_FORM = "documentlisting/view_edit";
+    public static final String VIEW_DETAIL = "documentlisting/view_detail";
 
 
     public static final String PAGE_DETAIL = "detail";

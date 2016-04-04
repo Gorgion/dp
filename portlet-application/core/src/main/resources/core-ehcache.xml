@@ -38,7 +38,7 @@
     </defaultCache>
 
 
-    <cache name="dummy.all.CACHE"
+    <cache name="document.all.CACHE"
            maxElementsInMemory="1000"
            eternal="false"
            timeToIdleSeconds="0"
@@ -50,7 +50,7 @@
            memoryStoreEvictionPolicy="LRU">
     </cache>
 
-    <cache name="dummy.byId.CACHE"
+    <cache name="document.byId.CACHE"
            maxElementsInMemory="1000"
            eternal="false"
            timeToIdleSeconds="0"

@@ -16,7 +16,7 @@
 
     <properties>
         <sdk.root>${project.parent.parent.basedir}</sdk.root>
-        <liferay.app.version.properties.text>plugin=${project.name}${line.separator}version=${project.version}${line.separator}gitbranch=${git.branch}${line.separator}buildDate=${maven.build.timestamp}${line.separator}commitDate=${git.commit.time}</liferay.app.version.properties.text>
+        <liferay.app.version.properties.text>plugin=${project.name}${line.separator}version=${project.version}${line.separator}${line.separator}buildDate=${maven.build.timestamp}${line.separator}</liferay.app.version.properties.text>
     </properties>
 
 
@@ -31,31 +31,6 @@
         <dependency>
             <groupId>cz.muni.fi.dp</groupId>
             <artifactId>dp-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.commons</groupId>
-            <artifactId>iba-commons-portlet</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.commons</groupId>
-            <artifactId>iba-commons-util</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.tags</groupId>
-            <artifactId>iba-common-tags</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.tags</groupId>
-            <artifactId>iba-detail</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.tags</groupId>
-            <artifactId>iba-form</artifactId>
         </dependency>
 
         <!-- Other dependencies -->
@@ -126,11 +101,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>eu.ibacz.commons</groupId>
-            <artifactId>iba-commons-test</artifactId>
         </dependency>
 
         <dependency>

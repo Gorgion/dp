@@ -8,12 +8,6 @@
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
-    <description>Archetype (version ${project.version}) for projects in IBA CZ environment.</description>
-
-    <organization>
-        <name>IBA CZ, s. r. o.</name>
-        <url>http://ibacz.eu</url>
-    </organization>
 
     <properties>
         <sdk.root>${project.basedir}</sdk.root>
@@ -23,18 +17,14 @@
         <war.filename>${project.artifactId}-${project.version}</war.filename>
 
         <liferay.app.name>${project.name}</liferay.app.name>
-        <liferay.app.description.short>${project.name} (Version: ${project.version}, Commit: ${git.commit.time}, Build: ${maven.build.timestamp}, Branch:${git.branch}) - ${project.description}</liferay.app.description.short>
+        <liferay.app.description.short>${project.name} (Version: ${project.version}, Build: ${maven.build.timestamp}</liferay.app.description.short>
         <liferay.app.description.long>${liferay.app.description.short}</liferay.app.description.long>
 
         <liferay.version>6.2.2</liferay.version>
 
-        <ibacommons.version>1.5</ibacommons.version>
-        <ibatags.version>3.3</ibatags.version>
-
         <spring.version>4.0.5.RELEASE</spring.version>
         <spring.data.version>1.7.1.RELEASE</spring.data.version>
         <hibernate.version>4.1.12.Final</hibernate.version>
-        <jrebel.maven.plugin.version>1.1.5</jrebel.maven.plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.java.source.ver>1.7</project.java.source.ver>
@@ -59,40 +49,40 @@
         </repository>
     </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>liferay-ce</id>
-            <name>Liferay CE Release Repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>
-        </repository>
-        <repository>
-            <id>ibacz-snapshots</id>
-            <name>IBA CZ Snapshots repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>
-        </repository>
-        <repository>
-            <id>ibacz-releases</id>
-            <name>IBA CZ Releases repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>liferay-ce</id>
-            <name>Liferay CE Release Repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>ibacz-snapshots</id>
-            <name>IBA CZ Snapshots repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>ibacz-releases</id>
-            <name>IBA CZ Releases repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>
-        </pluginRepository>
-    </pluginRepositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>liferay-ce</id>-->
+            <!--<name>Liferay CE Release Repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>ibacz-snapshots</id>-->
+            <!--<name>IBA CZ Snapshots repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>ibacz-releases</id>-->
+            <!--<name>IBA CZ Releases repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+    <!--<pluginRepositories>-->
+        <!--<pluginRepository>-->
+            <!--<id>liferay-ce</id>-->
+            <!--<name>Liferay CE Release Repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>-->
+        <!--</pluginRepository>-->
+        <!--<pluginRepository>-->
+            <!--<id>ibacz-snapshots</id>-->
+            <!--<name>IBA CZ Snapshots repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>-->
+        <!--</pluginRepository>-->
+        <!--<pluginRepository>-->
+            <!--<id>ibacz-releases</id>-->
+            <!--<name>IBA CZ Releases repository</name>-->
+            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>-->
+        <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
 
     <dependencyManagement>
         <!--
@@ -123,41 +113,41 @@
 
             <!-- IBA dependencies -->
 
-            <dependency>
-                <groupId>eu.ibacz.commons</groupId>
-                <artifactId>iba-commons-core</artifactId>
-                <version>${ibacommons.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.commons</groupId>-->
+                <!--<artifactId>iba-commons-core</artifactId>-->
+                <!--<version>${ibacommons.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>eu.ibacz.commons</groupId>
-                <artifactId>iba-commons-util</artifactId>
-                <version>${ibacommons.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.commons</groupId>-->
+                <!--<artifactId>iba-commons-util</artifactId>-->
+                <!--<version>${ibacommons.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>eu.ibacz.commons</groupId>
-                <artifactId>iba-commons-portlet</artifactId>
-                <version>${ibacommons.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.commons</groupId>-->
+                <!--<artifactId>iba-commons-portlet</artifactId>-->
+                <!--<version>${ibacommons.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>eu.ibacz.tags</groupId>
-                <artifactId>iba-common-tags</artifactId>
-                <version>${ibatags.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.tags</groupId>-->
+                <!--<artifactId>iba-common-tags</artifactId>-->
+                <!--<version>${ibatags.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>eu.ibacz.tags</groupId>
-                <artifactId>iba-detail</artifactId>
-                <version>${ibatags.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.tags</groupId>-->
+                <!--<artifactId>iba-detail</artifactId>-->
+                <!--<version>${ibatags.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>eu.ibacz.tags</groupId>
-                <artifactId>iba-form</artifactId>
-                <version>${ibatags.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>eu.ibacz.tags</groupId>-->
+                <!--<artifactId>iba-form</artifactId>-->
+                <!--<version>${ibatags.version}</version>-->
+            <!--</dependency>-->
 
             <!-- Liferay Portal dependencies -->
 
@@ -404,13 +394,6 @@
             </dependency>
 
             <dependency>
-                <groupId>eu.ibacz.commons</groupId>
-                <artifactId>iba-commons-test</artifactId>
-                <version>${ibacommons.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
                 <version>1.4</version>
@@ -499,11 +482,11 @@
                             <failFast>true</failFast>
                             <rules>
                                 <requireMavenVersion>
-                                    <message>[IBA Rule] Use correct maven version!</message>
+                                    <message>Use correct maven version!</message>
                                     <version>${project.maven.ver}</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <message>[IBA Rule] Use correct java version!</message>
+                                    <message>Use correct java version!</message>
                                     <version>${project.java.ver}</version>
                                 </requireJavaVersion>
                             </rules>
@@ -511,20 +494,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.zeroturnaround</groupId>
-                <artifactId>jrebel-maven-plugin</artifactId>
-                <version>${jrebel.maven.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-rebel-xml</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
@@ -666,7 +636,7 @@
   <modules>
     <module>portlet-application</module>
     <module>hooks</module>
-    <module>themes</module>
+    <!--<module>themes</module>-->
     <module>ext</module>
   </modules>
 </project>

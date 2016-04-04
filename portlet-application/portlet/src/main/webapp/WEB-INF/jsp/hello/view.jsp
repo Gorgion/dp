@@ -14,7 +14,7 @@ Parametry:
 
 <%@include file="../init.jspf" %>                                     
 
-<%@page import="static cz.muni.fi.dp.web.portlet.hello.HelloConstants.*" %>
+<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.HelloConstants.*" %>
 
 <portlet:renderURL var="createUrl">
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_CREATE_FORM %>" />
@@ -63,7 +63,7 @@ Parametry:
                         <portlet:param name="<%= PARAM_ID %>" value="${item.id}"/>
                     </portlet:actionURL>
                     <spring:message var="deleteMsg" code="msg-hello-delete-question" arguments="${item.name}"/>
-                    <%-- Je mozne vyuzit i nejaky vlastni TAG: <iba:action-button labelCode="msg-hello-delete-btn" confirmText="${deleteMsg}" url="${deleteUrl}" /> --%>
+                    <%-- Je mozne vyuzit i nejaky vlastni TAG: <iba:action-button labelCode="msg-documentlisting-delete-btn" confirmText="${deleteMsg}" url="${deleteUrl}" /> --%>
                     <span>
                         <%-- Zadefinovanie naviazania eventu pomocou js-on- --%>
                         <a class="taglib-icon js-on-actionUrlButton" data-url="${deleteUrl}" data-url-confirm="${iba:escapeHtml(deleteMsg)}" href="javascript:;">

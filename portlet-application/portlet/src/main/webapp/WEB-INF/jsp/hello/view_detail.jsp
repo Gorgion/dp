@@ -14,7 +14,7 @@ Parametry:
 
 <%@include file="../init.jspf" %>
 
-<%@page import="static cz.muni.fi.dp.web.portlet.hello.HelloConstants.*" %>
+<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.HelloConstants.*" %>
 
 <portlet:renderURL var="editUrl">
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_EDIT_FORM %>" />

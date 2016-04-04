@@ -8,9 +8,8 @@
  *  ===========================================================================
  *
  */
-package cz.muni.fi.dp.web.portlet.hello.pto;
+package cz.muni.fi.dp.web.portlet.documentlisting.pto;
 
-import cz.muni.fi.dp.iface.DataLengthConstants;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
