@@ -5,17 +5,17 @@
              version="2.0">
 
     <portlet>
-        <portlet-name>HelloPortlet</portlet-name>
-        <portlet-class>eu.ibacz.commons.portlet.OldResourceDispatcherPortlet</portlet-class>
+        <portlet-name>DocumentListingPortlet</portlet-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
         <init-param>
             <name>contextConfigLocation</name>
-            <value>/WEB-INF/spring-context/portlet/hello-portlet.xml</value>
+            <value>/WEB-INF/spring-context/portlet/document-listing-portlet.xml</value>
         </init-param>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>VIEW</portlet-mode>
         </supports>
         <supported-locale>cs</supported-locale>
-        <resource-bundle>content.hello-portlet</resource-bundle>
+        <resource-bundle>content.document-listing-portlet</resource-bundle>
     </portlet>
 </portlet-app>

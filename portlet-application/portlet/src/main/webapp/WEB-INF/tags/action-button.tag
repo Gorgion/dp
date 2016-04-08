@@ -1,11 +1,3 @@
-<%-- =======================================================================
- *   IBA CZ Confidential
- *
- *    Copyright IBA CZ 2014 ALL RIGHTS RESERVED
- *    The source code for this program is not published or otherwise
- *    divested of its trade secrets.
- *
- * ======================================================================= --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="portlet" uri="http://java.sun.com/portlet_2_0" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -30,4 +22,4 @@
     <spring:message var="confirmText" code="${confirmCode}" />
 </c:if>
 
-<input type="button" class="button action-url-button js-on-actionUrlButton" value="${iba:escapeHtml(labelText)}" data-url="${url}" data-url-confirm="${iba:escapeHtml(confirmText)}" />
+s<input type="button" class="button action-url-button js-on-actionUrlButton" value="${labelText}" data-url="${url}" data-url-confirm="${confirmText}" />

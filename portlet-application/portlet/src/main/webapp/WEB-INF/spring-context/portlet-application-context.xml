@@ -12,8 +12,6 @@
 
     <import resource="classpath*:spring-context/core-application-context.xml" />
 
-    <bean class="cz.muni.fi.dp.core.util.IbaLiferayPlaceholderConfigurer"/>
-
     <!--Enables @Autowired annotation-->
     <context:annotation-config/>
 
@@ -26,41 +24,39 @@
     -->
 
     <!-- JSR-303 validation support -->
-    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-        <property name="messageInterpolator">
-            <bean class="eu.ibacz.commons.portlet.SpringMessageInterpolator" />
-        </property>
-    </bean>
+    <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+        <!--<property name="messageInterpolator">-->
+            <!--<bean class=".commons.portlet.SpringMessageInterpolator" />-->
+        <!--</property>-->
+    <!--</bean>-->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
-    <bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
-        <property name="validator" ref="validator" />
-        <property name="conversionService" ref="conversionService" />
-    </bean>
-    <bean class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="webBindingInitializer">
-            <ref bean="webBindingInitializer" />
-        </property>
-    </bean>
+    <!--<bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">-->
+        <!--<property name="validator" ref="validator" />-->
+        <!--<property name="conversionService" ref="conversionService" />-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">-->
+        <!--<property name="webBindingInitializer">-->
+            <!--<ref bean="webBindingInitializer" />-->
+        <!--</property>-->
+    <!--</bean>-->
     <!-- Allows use JSR-303 annotations -->
-    <mvc:annotation-driven conversion-service="conversionService" validator="validator" />
+    <!--<mvc:annotation-driven conversion-service="conversionService" validator="validator" />-->
 
     <!-- Enables a file upload -->
     <bean id="portletMultipartResolver" class="org.springframework.web.portlet.multipart.CommonsPortletMultipartResolver">
         <!-- <property name="maxUploadSize" value="1048576"/> -->
     </bean>
 
-    <!-- Application exception handling -->
-    <bean class="org.springframework.web.portlet.handler.SimpleMappingExceptionResolver">
-        <property name="exceptionMappings">
-            <props>
-                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">errorFileSize</prop>
-                <prop key="eu.ibacz.commons.exception.EntityNotFoundExceptio">errorEntityNotFound</prop>
-                <prop key="eu.ibacz.commons.exception.PermissionException">errorPermission</prop>
-                <prop key="org.springframework.web.portlet.handler.PortletSessionRequiredException">errorSessionAttr</prop>
-                <prop key="java.lang.Exception">error</prop>
-            </props>
-        </property>
-    </bean>
+    <!--&lt;!&ndash; Application exception handling &ndash;&gt;-->
+    <!--<bean class="org.springframework.web.portlet.handler.SimpleMappingExceptionResolver">-->
+        <!--<property name="exceptionMappings">-->
+            <!--<props>-->
+                <!--<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">errorFileSize</prop>-->
+                <!--<prop key="org.springframework.web.portlet.handler.PortletSessionRequiredException">errorSessionAttr</prop>-->
+                <!--<prop key="java.lang.Exception">error</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
  
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> <!-- pozor: ReloadableResourceBundleMessageSource nefunguje v JSP! -->
         <property name="useCodeAsDefaultMessage" value="true" />
@@ -76,10 +72,6 @@
         </property>
     </bean>
 
-    <!-- IBA Detail configuration -->
-    <bean class="eu.ibacz.tags.ibadetail.IBADetail">
-        <property name="defaultEmptyValueCode" value="msg-common-empty-value" />
-    </bean>
 
     <!-- Spring MVC VIEW Configuration -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

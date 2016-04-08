@@ -11,8 +11,6 @@
     <short-description>${liferay.app.description.short}</short-description>
     <long-description>${liferay.app.description.long}</long-description>
     <change-log></change-log>
-    <page-url>http://ibacz.eu</page-url>
-    <author>IBA CZ, s. r. o.</author>
     <licenses>
         <license osi-approved="false">Proprietary</license>
     </licenses>

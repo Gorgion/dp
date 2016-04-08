@@ -20,7 +20,7 @@
     <jsp-config>
         <taglib>
             <taglib-uri>http://www.ibacz.eu/tags/iba</taglib-uri>
-            <taglib-location>/WEB-INF/tld/iba.tld</taglib-location>
+            <taglib-location>/WEB-INF/tld/dp.tld</taglib-location>
         </taglib>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.1</jsp-version>
+
+    <short-name>dp</short-name>
+
+    <!-- Project TAGs -->
+    <tag-file>
+        <name>action-button</name>
+        <path>/WEB-INF/tags/action-button.tag</path>
+    </tag-file>
+
+</taglib>
