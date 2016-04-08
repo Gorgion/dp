@@ -1,59 +1,134 @@
-/**
- *  ===========================================================================
- *  IBA CZ Confidential
- *
- *  © Copyright IBA CZ 2014 ALL RIGHTS RESERVED
- *  The source code for this program is not published or otherwise
- *  divested of its trade secrets.
- *  ===========================================================================
- *
- */
 package cz.muni.fi.dp.iface.dto;
 
-import eu.ibacz.commons.dto.BaseDTO;
+import java.io.InputStream;
+import java.io.Serializable;
 
 /**
- * Data Transfer Object for Dummy entity.
+ * Data Transfer Object for document entity.
  */
-public class DocumentDTO extends BaseDTO<Long> {
+public class DocumentDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    private String name;
-    private String email;
+    private Long repositoryId;
+    private Long folderId;
+    private String sourceFileName;
+    private String mimeType;
+    private String title;
+    private String description;
+    private String changeLog;
+    private InputStream is;
+    private Long size;
 
     public DocumentDTO() {
     }
 
-    public DocumentDTO(Long id, String name, String email) {
+    public DocumentDTO(Long id, Long repositoryId, Long folderId, String sourceFileName, String mimeType, String title,
+                       String description, String changeLog, InputStream is, Long size) {
         this.id = id;
-        this.name = name;
-        this.email = email;
+        this.repositoryId = repositoryId;
+        this.folderId = folderId;
+        this.sourceFileName = sourceFileName;
+        this.mimeType = mimeType;
+        this.title = title;
+        this.description = description;
+        this.changeLog = changeLog;
+        this.is = is;
+        this.size = size;
     }
-    
-    @Override
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public DocumentDTO setId(Long id) {
         this.id = id;
+        return this;
     }
 
-    public String getName() {
-        return name;
+    public Long getRepositoryId() {
+        return repositoryId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public DocumentDTO setRepositoryId(Long repositoryId) {
+        this.repositoryId = repositoryId;
+        return this;
     }
 
-    public String getEmail() {
-        return email;
+    public Long getFolderId() {
+        return folderId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public DocumentDTO setFolderId(Long folderId) {
+        this.folderId = folderId;
+        return this;
+    }
+
+    public String getSourceFileName() {
+        return sourceFileName;
+    }
+
+    public DocumentDTO setSourceFileName(String sourceFileName) {
+        this.sourceFileName = sourceFileName;
+        return this;
+    }
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public DocumentDTO setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+        return this;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public DocumentDTO setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public DocumentDTO setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public String getChangeLog() {
+        return changeLog;
+    }
+
+    public DocumentDTO setChangeLog(String changeLog) {
+        this.changeLog = changeLog;
+        return this;
+    }
+
+    public InputStream getIs() {
+        return is;
+    }
+
+    public DocumentDTO setIs(InputStream is) {
+        this.is = is;
+        return this;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public DocumentDTO setSize(Long size) {
+        this.size = size;
+        return this;
     }
 }

@@ -21,7 +21,7 @@
             <list>
                 <value>content.Language-ext</value>
                 <value>content.common-messages</value>
-                <value>content.hello-portlet</value>
+                <value>content.document-listing-portlet</value>
             </list>
         </property>
     </bean>

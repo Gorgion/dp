@@ -13,9 +13,4 @@ public interface DocumentService {
 
     DocumentDTO getDocumentById(Long id);
 
-    long createDocument(DocumentDTO DocumentDTO);
-
-    void updateDocument(DocumentDTO DocumentDTO);
-
-    void deleteDocumentById(Long id);
 }
