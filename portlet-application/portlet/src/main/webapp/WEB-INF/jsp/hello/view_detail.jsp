@@ -14,7 +14,7 @@ Parametry:
 
 <%@include file="../init.jspf" %>
 
-<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.HelloConstants.*" %>
+<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.DocumentListingConstants.*" %>
 
 <portlet:renderURL var="editUrl">
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_EDIT_FORM %>" />
@@ -25,7 +25,7 @@ Parametry:
 <div class="iba-application portlet-hello">
     <iba-common:portletmessages />
     
-    <iba-detail:detail modelAttribute="<%= ATTR_DUMMY_DTO %>" headingCode="msg-hello-dummy-detail">
+    <iba-detail:detail modelAttribute="<%= ATTR_DOCUMENT_DTO %>" headingCode="msg-hello-dummy-detail">
         <iba-detail:value path="name" />
         <iba-detail:value path="email" />
     </iba-detail:detail>

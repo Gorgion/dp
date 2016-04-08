@@ -14,7 +14,7 @@ Parametry:
 
 <%@include file="../init.jspf" %>                                     
 
-<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.HelloConstants.*" %>
+<%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.DocumentListingConstants.*" %>
 
 <portlet:renderURL var="createUrl">
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_CREATE_FORM %>" />
