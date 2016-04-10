@@ -16,24 +16,20 @@ Parametry:
 
 <%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.DocumentListingConstants.*" %>
 
-<portlet:renderURL var="editUrl">
-    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_EDIT_FORM %>" />
-    <portlet:param name="<%= PARAM_ID %>" value="${documentDTO.id}" />
-</portlet:renderURL>
 <portlet:renderURL var="backUrl" />
 
-<div class="iba-application portlet-hello">
+<div class="dp-application portlet-documentListing">
+    <spring:message var="title" code="msg-document-detail-header" />
+    <liferay-ui:header title="${title}" backURL="${backUrl}" />
+
     <c:if test="${not empty resultMsg}">
         <div><spring:message code="${resultMsg}" /></div>
     </c:if>
-    
-    <iba-detail:detail modelAttribute="<%= ATTR_DOCUMENT_DTO %>" headingCode="msg-hello-dummy-detail">
-        <iba-detail:value path="name" />
-        <iba-detail:value path="email" />
-    </iba-detail:detail>
 
-    <div class="buttons">
-        <button class="js-on-goToPage" data-url="${editUrl}"><spring:message code="msg-common-btn-edit" /></button>
-        <button class="js-on-goToPage" data-url="${backUrl}"><spring:message code="msg-common-btn-back" /></button>
+    <div class="document-wrapper">
+        <h1>${documentDto.title}</h1>
+        <p>${documentDto.description}</p>
+        <p><spring:message code="msg-document-detail-size" />: ${documentDto.size}</p>
+        <p><spring:message code="msg-document-detail-type" />: ${documentDto.mimeType}</p>
     </div>
 </div>

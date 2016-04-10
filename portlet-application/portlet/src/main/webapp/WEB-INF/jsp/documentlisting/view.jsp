@@ -1,14 +1,3 @@
-<%-- ==========================================================================================
- *   IBA CZ Confidential
- *   Copyright IBA CZ 2014 ALL RIGHTS RESERVED
- *   The source code for this program is not published or otherwise divested of its trade secrets.
- * =============================================================================================
-
-JSP pro výpis seznamu objektů.
-
-Parametry:
-    List<DummyDto> allItems   - seznam DTO objektů pro výpis
---%>
 <%--@elvariable id="allItems" type="java.util.List<cz.muni.fi.dp.iface.dto.DocumentDTO>"--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
