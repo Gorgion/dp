@@ -2,6 +2,7 @@ package cz.muni.fi.dp.iface.service;
 
 import java.util.List;
 
+import com.liferay.portal.service.ServiceContext;
 import cz.muni.fi.dp.iface.dto.DocumentDTO;
 
 /**
@@ -13,4 +14,9 @@ public interface DocumentService {
 
     DocumentDTO getDocumentById(Long id);
 
+    long createDocument(DocumentDTO documentDTO, ServiceContext serviceContext);
+
+    void updateDocument(DocumentDTO documentDTO, ServiceContext serviceContext);
+
+    void deleteDocumentById(Long id);
 }

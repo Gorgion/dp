@@ -4,13 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
 
-    <!--<bean id="userLocalService" class="com.liferay.portal.service.UserLocalServiceUtil" factory-method="getService"/>-->
-    <!--<bean id="roleLocalService" class="com.liferay.portal.service.RoleLocalServiceUtil" factory-method="getService"/>-->
-    <!--<bean id="groupLocalService" class="com.liferay.portal.service.GroupLocalServiceUtil" factory-method="getService"/>-->
-    <!--<bean id="userGroupLocalService" class="com.liferay.portal.service.UserGroupLocalServiceUtil" factory-method="getService"/>-->
-    <!--<bean id="dlAppLocalService" class="com.liferay.portlet.documentlibrary.service.DLAppLocalServiceUtil" factory-method="getService"/>-->
-    <!--<bean id="dlFolderLocalService" class="com.liferay.portlet.documentlibrary.service.DLFolderLocalServiceUtil" factory-method="getService"/>-->
+    <bean id="mbThreadLocalService" class="com.liferay.portlet.messageboards.service.MBThreadLocalServiceUtil" factory-method="getService"/>
     <bean id="dlFileEntryLocalService" class="com.liferay.portlet.documentlibrary.service.DLFileEntryLocalServiceUtil" factory-method="getService"/>
+    <bean id="dlAppLocalService" class="com.liferay.portlet.documentlibrary.service.DLAppLocalServiceUtil" factory-method="getService"/>
 
 
 </beans>

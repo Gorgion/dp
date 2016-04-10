@@ -17,61 +17,43 @@ Parametry:
 <%@page import="static cz.muni.fi.dp.web.portlet.documentlisting.DocumentListingConstants.*" %>
 
 <portlet:renderURL var="createUrl">
-    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_CREATE_FORM %>" />
+    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_UPLOAD %>" />
 </portlet:renderURL>
 
-<div id="${ns}helloView" class="iba-application portlet-hello">
-    <iba-common:portletmessages />
+<portlet:renderURL var="detailUrl">
+    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_DETAIL %>" />
+    <portlet:param name="<%= PARAM_ID %>" value="${item.id}" />
+</portlet:renderURL>
 
-    <liferay-ui:search-container emptyResultsMessage="msg-hello-no-items">
+<div id="${ns}documentView" class="iba-application portlet-document">
+    <c:if test="${not empty resultMsg}">
+        <div><spring:message code="${resultMsg}" /></div>
+    </c:if>
+
+    <liferay-ui:search-container emptyResultsMessage="msg-document-no-items">
         <liferay-ui:search-container-results results="${allItems}" total="${fn:length(allItems)}" />
 
         <liferay-ui:search-container-row className="cz.muni.fi.dp.iface.dto.DocumentDTO" modelVar="item">
-            <liferay-ui:search-container-column-text name="name">
-                <c:out value="${item.name}" />
+            <liferay-ui:search-container-column-text>
+                <h1><a href="${detailUrl}"><c:out value="${item.title}" /></a></h1>
+                <p><c:out value="${item.description}"/></p>
             </liferay-ui:search-container-column-text>
 
-            <liferay-ui:search-container-column-text name="email">
-                <c:choose>
-                    <c:when test="${!empty item.email}">
-                        <c:out value="${item.email}" />
-                    </c:when>
-                    <c:otherwise>
-                        <em><spring:message code="msg-common-empty-value" /></em>
-                    </c:otherwise>
-                </c:choose>
-            </liferay-ui:search-container-column-text>
-
-            <liferay-ui:search-container-column-text name="hello-label-actions">
-                <portlet:renderURL var="detailUrl">
-                    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_DETAIL %>" />
-                    <portlet:param name="<%= PARAM_ID %>" value="${item.id}" />
-                </portlet:renderURL>
-                <portlet:renderURL var="editUrl">
-                    <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_EDIT_FORM %>" />
-                    <portlet:param name="<%= PARAM_ID %>" value="${item.id}" />
-                </portlet:renderURL>
+            <liferay-ui:search-container-column-text name="document-label-actions">
                 <spring:message var="icoLabel" code="msg-common-btn-detail" />
                 <liferay-ui:icon image="view" url="${detailUrl}" message="${icoLabel}" alt="${icoLabel}" />
-                <spring:message var="icoLabel" code="msg-common-btn-edit" />
-                <liferay-ui:icon image="edit" url="${editUrl}" message="${icoLabel}" alt="${icoLabel}" />
 
-                <%-- Podmienene zobrazenie tlacida s akciou --%>
-                <c:if test="${deletePermission}">
-                    <%-- Vygenervoanie  url ktore sa bude pre akciu pouzivat.--%>
-                    <portlet:actionURL name="<%= ACTION_DELETE %>" var="deleteUrl">
-                        <portlet:param name="<%= PARAM_ID %>" value="${item.id}"/>
-                    </portlet:actionURL>
-                    <spring:message var="deleteMsg" code="msg-hello-delete-question" arguments="${item.name}"/>
-                    <%-- Je mozne vyuzit i nejaky vlastni TAG: <iba:action-button labelCode="msg-documentlisting-delete-btn" confirmText="${deleteMsg}" url="${deleteUrl}" /> --%>
-                    <span>
-                        <%-- Zadefinovanie naviazania eventu pomocou js-on- --%>
-                        <a class="taglib-icon js-on-actionUrlButton" data-url="${deleteUrl}" data-url-confirm="${iba:escapeHtml(deleteMsg)}" href="javascript:;">
-                            <spring:message var="icoLabel" code="msg-common-btn-delete" />
-                            <liferay-ui:icon image="delete" message="${icoLabel}" alt="${icoLabel}" />
-                        </a>
-                    </span>
-                </c:if>
+                <portlet:actionURL name="<%= ACTION_DELETE %>" var="deleteUrl">
+                    <portlet:param name="<%= PARAM_ID %>" value="${item.id}"/>
+                </portlet:actionURL>
+                <spring:message var="deleteMsg" code="msg-document-delete-question" arguments="${item.title}"/>
+                <%-- Je mozne vyuzit i nejaky vlastni TAG: <iba:action-button labelCode="msg-documentlisting-delete-btn" confirmText="${deleteMsg}" url="${deleteUrl}" /> --%>
+                <span>
+                    <a class="taglib-icon" href="${deleteUrl}">
+                        <spring:message var="icoLabel" code="msg-common-btn-delete" />
+                        <liferay-ui:icon image="delete" message="${icoLabel}" alt="${icoLabel}" />
+                    </a>
+                </span>
             </liferay-ui:search-container-column-text>
         </liferay-ui:search-container-row>
 
@@ -79,24 +61,6 @@ Parametry:
     </liferay-ui:search-container>
 
     <div class="buttons">
-        <%-- Zadefinovanie naviazania eventu pomocou js-on- --%>
-        <button class="js-on-goToPage" data-url="${createUrl}"><spring:message code="msg-common-btn-new" /></button>
+        <a class="btn btn-primary" href="${createUrl}"><spring:message code="msg-common-btn-new" /></a>
     </div>
 </div>
-
-<script type="text/javascript">
-    /*<![CDATA[*/
-    /** volanie inicializacneho skriptu a predanie hodnout. */
-    AUI().ready(function() {
-        /*
-        IBA.helloView({
-            ns: "${ns}",
-            deleteUrl: '${deleteUrl}', // url je prazdny string, ak delete nie je povoleny
-            localization: { // lolizacni texty
-                deleteQuestion: '<spring:message code="msg-hello-delete-question" arguments="-"/>'
-            }
-        });
-        */
-    });
-    /*]]>*/
-</script>

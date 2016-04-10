@@ -1,30 +1,9 @@
 <%@page pageEncoding="UTF-8" %>
-<%-- ==========================================================================================
- *   IBA CZ Confidential
- *   Copyright IBA CZ 2014 ALL RIGHTS RESERVED
- *   The source code for this program is not published or otherwise divested of its trade secrets.
- * =============================================================================================
 
-Fragment pro výpis formuláře.
+<div id="${ns}documentEditForm">
 
-Parametry:
-    String heading      - kód do resource bundlu pro záhlaví formuláře
-    String actionUrl    - URL pro odeslání formuláře
-    String backUrl      - URL pro přesněrování při stornování
-    String addEmailUrl  - URL pre aktivaci E-mail imputu
-    DummyPto dummyPto   - PTO object pro formulář
---%>
-
-<div id="${ns}helloEditForm">
-
-    <a class="js-on-aToButton" href="${addEmailUrl}">
-        <spring:message code="msg-hello-add-email"/>
-    </a>
-
-    <iba-form:form modelAttribute="<%= ATTR_DUMMY_PTO %>" action="${actionUrl}" method="post" headingCode="${heading}">
-        <iba-form:hidden path="id"/>
-
-        <iba-form:input path="name" mandatory="true"/>
+    <form:form modelAttribute="<%= ATTR_DOCUMENT_PTO %>" action="${actionUrl}" method="post">
+        <form:input path="name" mandatory="true"/>
 
         <c:choose>
             <c:when test="${addEmail}">
@@ -41,7 +20,7 @@ Parametry:
             <%-- naviazanie akcie na tlacidlo pomocou js-on- triedy. --%>
             <button class="js-on-goToPage" data-url="${backUrl}"><spring:message code="msg-common-btn-cancel" /></button>
         </iba-form:buttons>
-    </iba-form:form>
+    </form:form>
 </div>
 
 <script type="text/javascript">

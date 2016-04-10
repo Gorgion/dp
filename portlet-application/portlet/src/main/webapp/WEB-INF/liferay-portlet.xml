@@ -4,10 +4,6 @@
     <portlet>
         <portlet-name>DocumentListingPortlet</portlet-name>
 
-        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
-        <friendly-url-mapping>document</friendly-url-mapping>
-        <friendly-url-routes>friendly-url/documentListing-url-routes.xml</friendly-url-routes>
-
         <action-url-redirect>true</action-url-redirect>
         <instanceable>false</instanceable>
         <scopeable>false</scopeable>

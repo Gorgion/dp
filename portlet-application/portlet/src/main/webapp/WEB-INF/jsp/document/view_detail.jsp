@@ -23,7 +23,9 @@ Parametry:
 <portlet:renderURL var="backUrl" />
 
 <div class="iba-application portlet-hello">
-    <iba-common:portletmessages />
+    <c:if test="${not empty resultMsg}">
+        <div><spring:message code="${resultMsg}" /></div>
+    </c:if>
     
     <iba-detail:detail modelAttribute="<%= ATTR_DOCUMENT_DTO %>" headingCode="msg-hello-dummy-detail">
         <iba-detail:value path="name" />

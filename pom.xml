@@ -20,7 +20,7 @@
         <liferay.app.description.short>${project.name} (Version: ${project.version}, Build: ${maven.build.timestamp}</liferay.app.description.short>
         <liferay.app.description.long>${liferay.app.description.short}</liferay.app.description.long>
 
-        <liferay.version>6.2.2</liferay.version>
+        <liferay.version>6.2.3</liferay.version>
 
         <spring.version>4.0.5.RELEASE</spring.version>
         <spring.data.version>1.7.1.RELEASE</spring.data.version>
@@ -34,55 +34,6 @@
 
         <liquibase.version>3.4.1</liquibase.version>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ibacz-snapshots</id>
-            <name>IBA CZ Snapshots repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-        <repository>
-            <id>ibacz-releases</id>
-            <name>IBA CZ Releases repository</name>
-            <url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>
-        </repository>
-    </distributionManagement>
-
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>liferay-ce</id>-->
-            <!--<name>Liferay CE Release Repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>ibacz-snapshots</id>-->
-            <!--<name>IBA CZ Snapshots repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>ibacz-releases</id>-->
-            <!--<name>IBA CZ Releases repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
-    <!--<pluginRepositories>-->
-        <!--<pluginRepository>-->
-            <!--<id>liferay-ce</id>-->
-            <!--<name>Liferay CE Release Repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/liferay-ce-releases</url>-->
-        <!--</pluginRepository>-->
-        <!--<pluginRepository>-->
-            <!--<id>ibacz-snapshots</id>-->
-            <!--<name>IBA CZ Snapshots repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-snapshots</url>-->
-        <!--</pluginRepository>-->
-        <!--<pluginRepository>-->
-            <!--<id>ibacz-releases</id>-->
-            <!--<name>IBA CZ Releases repository</name>-->
-            <!--<url>http://ar.ibacz.cz/nexus/content/repositories/ibacz-releases</url>-->
-        <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
 
     <dependencyManagement>
         <!--
@@ -110,44 +61,6 @@
                 <version>1.0-SNAPSHOT</version>
                 <scope>runtime</scope>
             </dependency>
-
-            <!-- IBA dependencies -->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.commons</groupId>-->
-                <!--<artifactId>iba-commons-core</artifactId>-->
-                <!--<version>${ibacommons.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.commons</groupId>-->
-                <!--<artifactId>iba-commons-util</artifactId>-->
-                <!--<version>${ibacommons.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.commons</groupId>-->
-                <!--<artifactId>iba-commons-portlet</artifactId>-->
-                <!--<version>${ibacommons.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.tags</groupId>-->
-                <!--<artifactId>iba-common-tags</artifactId>-->
-                <!--<version>${ibatags.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.tags</groupId>-->
-                <!--<artifactId>iba-detail</artifactId>-->
-                <!--<version>${ibatags.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>eu.ibacz.tags</groupId>-->
-                <!--<artifactId>iba-form</artifactId>-->
-                <!--<version>${ibatags.version}</version>-->
-            <!--</dependency>-->
 
             <!-- Liferay Portal dependencies -->
 
@@ -368,6 +281,19 @@
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.8</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>5.5.1</version>
             </dependency>
 
             <!-- Test dependencies -->
