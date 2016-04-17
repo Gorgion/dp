@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @NoArgsConstructor
 public class DocumentPTO implements Serializable {
-
+    private Long id;
     private String title;
     private String description;
     private MultipartFile file;

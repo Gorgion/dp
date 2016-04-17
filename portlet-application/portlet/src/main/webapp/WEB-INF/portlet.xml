@@ -11,11 +11,28 @@
             <name>contextConfigLocation</name>
             <value>/WEB-INF/spring-context/portlet/document-listing-portlet.xml</value>
         </init-param>
+        <init-param>
+            <name>config-template</name>
+            <value>/WEB-INF/jsp/documentlisting/config.jsp</value>
+        </init-param>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>VIEW</portlet-mode>
+            <!--<portlet-mode>EDIT</portlet-mode>-->
         </supports>
         <supported-locale>cs</supported-locale>
         <resource-bundle>content.document-listing-portlet</resource-bundle>
+        <security-role-ref>
+            <role-name>administrator</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>guest</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>power-user</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>user</role-name>
+        </security-role-ref>
     </portlet>
 </portlet-app>

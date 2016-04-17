@@ -15,8 +15,6 @@
     <!--Enables @Autowired annotation-->
     <context:annotation-config/>
 
-    <!-- <context:component-scan base-package="eu.ibacz.commons.liferay.facade" /> -->
-
     <!-- Action Redirect Support -->
     <!--
     <aop:aspectj-autoproxy />
@@ -24,23 +22,23 @@
     -->
 
     <!-- JSR-303 validation support -->
-    <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
-        <!--<property name="messageInterpolator">-->
-            <!--<bean class=".commons.portlet.SpringMessageInterpolator" />-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="messageInterpolator">
+            <bean class="cz.muni.fi.dp.web.portlet.SpringMessageInterpolator" />
+        </property>
+    </bean>
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
-    <!--<bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">-->
-        <!--<property name="validator" ref="validator" />-->
-        <!--<property name="conversionService" ref="conversionService" />-->
-    <!--</bean>-->
-    <!--<bean class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">-->
-        <!--<property name="webBindingInitializer">-->
-            <!--<ref bean="webBindingInitializer" />-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+        <property name="validator" ref="validator" />
+        <property name="conversionService" ref="conversionService" />
+    </bean>
+    <bean class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="webBindingInitializer">
+            <ref bean="webBindingInitializer" />
+        </property>
+    </bean>
     <!-- Allows use JSR-303 annotations -->
-    <!--<mvc:annotation-driven conversion-service="conversionService" validator="validator" />-->
+    <mvc:annotation-driven conversion-service="conversionService" validator="validator" />
 
     <!-- Enables a file upload -->
     <bean id="portletMultipartResolver" class="org.springframework.web.portlet.multipart.CommonsPortletMultipartResolver">

@@ -2,38 +2,24 @@
 
 <div id="${ns}documentEditForm">
 
-    <form:form modelAttribute="<%= ATTR_DOCUMENT_PTO %>" action="${actionUrl}" method="post">
-        <form:input path="name" mandatory="true"/>
+    <form:form modelAttribute="<%= ATTR_DOCUMENT_PTO %>" action="${actionUrl}" method="post" enctype="multipart/form-data">
+        <form:errors path="*" cssClass="errorblock" element="div" />
+        <form:hidden path="id" />
+        <table>
+            <tr><td><spring:message code="title" />:</td><td><form:input path="title" type="text" /><span><form:errors path="title" cssClass="error" /></span></td></tr>
+            <tr><td><spring:message code="description" />:</td><td><form:textarea path="description" type="text" /><span><form:errors path="description" cssClass="error" /></span></td></tr>
+            <c:if test="${asEdit == false}">
+                <tr><td><spring:message code="file" />:</td><td><form:input path="file" type="file"/><span><form:errors path="file" cssClass="error" /></span></td></tr>
+            </c:if>
+            <c:choose>
+                <c:when test="${asEdit == false}">
+                    <tr><td></td><td><input type="submit" value='<spring:message code="msg-common-btn-upload" />' /></td></tr>
+                </c:when>
+                <c:otherwise>
+                    <tr><td></td><td><input type="submit" value='<spring:message code="msg-common-btn-edit" />' /></td></tr>
+                </c:otherwise>
+            </c:choose>
+        </table>
 
-        <c:choose>
-            <c:when test="${addEmail}">
-                <iba-form:input path="email"/>
-            </c:when>
-            <c:otherwise>
-                <spring:message code="msg-hello-add-emial"/>
-            </c:otherwise>
-        </c:choose>
-
-
-        <iba-form:buttons>
-            <iba-form:submit labelCode="msg-common-btn-save"/>
-            <%-- naviazanie akcie na tlacidlo pomocou js-on- triedy. --%>
-            <button class="js-on-goToPage" data-url="${backUrl}"><spring:message code="msg-common-btn-cancel" /></button>
-        </iba-form:buttons>
     </form:form>
 </div>
-
-<script type="text/javascript">
-    /*<![CDATA[*/
-    /** volanie inicializacneho skriptu a predanie hodnout. */
-    AUI().ready(function() {
-        IBA.helloForm({
-            ns: "${ns}",
-            localization: {
-                name: '<spring:message code="NotEmpty"/> ',
-                email: '<spring:message code="Email" />'
-            }
-        });
-    });
-    /*]]>*/
-</script>

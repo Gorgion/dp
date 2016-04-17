@@ -14,6 +14,6 @@
     <c:if test="${not empty resultMsg}">
         <div><spring:message code="${resultMsg}" /></div>
     </c:if>
-
+    <c:set var="asEdit" value="false" />
     <%@include file="components/form.jspf" %>
 </div>

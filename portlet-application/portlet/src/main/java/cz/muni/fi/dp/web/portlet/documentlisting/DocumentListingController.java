@@ -9,11 +9,15 @@ import javax.portlet.RenderResponse;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.repository.model.FileEntry;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.documentlibrary.model.DLFileEntry;
 import com.liferay.portlet.documentlibrary.model.DLFolderConstants;
+import com.liferay.portlet.documentlibrary.service.DLAppLocalServiceUtil;
+import com.liferay.portlet.documentlibrary.util.DLUtil;
 import cz.muni.fi.dp.iface.dto.DocumentDTO;
 import cz.muni.fi.dp.web.portlet.documentlisting.pto.DocumentPTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +53,12 @@ public class DocumentListingController {
     }
 
     @RenderMapping(params = PARAM_PAGE + "=" + PAGE_DETAIL)
-    public String detail(@RequestParam(PARAM_ID) Long id, Model model, RenderRequest request, RenderResponse response) {
+    public String detail(@RequestParam(PARAM_ID) Long id, Model model, RenderRequest request, RenderResponse response) throws SystemException, PortalException {
 
         model.addAttribute(ATTR_DOCUMENT_DTO, service.getDocumentById(id));
+        FileEntry fileEntry = DLAppLocalServiceUtil.getFileEntry(id);
+        String url = DLUtil.getPreviewURL(fileEntry, fileEntry.getFileVersion(), getThemeDisplay(request), "", true, true);
+        model.addAttribute(ATTR_DOWNLOAD_URL, url);
 
         return VIEW_DETAIL;
     }
@@ -104,10 +111,18 @@ public class DocumentListingController {
 
     }
 
-//    @ActionMapping(ACTION_UPDATE)
-//    public void uploadAction(@ModelAttribute(PARAM_DOCUMENT_PTO) DocumentPTO pto, BindingResult result, ActionRequest request, ActionResponse response) {
-//
-//    }
+    @ActionMapping(ACTION_UPDATE)
+    public void uploadAction(@ModelAttribute(PARAM_DOCUMENT_PTO) DocumentPTO pto, BindingResult result, ActionRequest request, ActionResponse response) throws SystemException, PortalException {
+        DocumentDTO documentDTO = service.getDocumentById(pto.getId());
+        documentDTO.setTitle(pto.getTitle());
+        documentDTO.setDescription(pto.getDescription());
+
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(DLFileEntry.class.getName(), request);
+
+        service.updateDocument(documentDTO, serviceContext);
+
+        response.setRenderParameter("resultMsg", "msg-document-updated");
+    }
 
     @ActionMapping(ACTION_DELETE)
     public void deleteAction(@RequestParam(PARAM_ID) Long id, ActionRequest request, ActionResponse response) {
@@ -118,7 +133,13 @@ public class DocumentListingController {
 
     private DocumentPTO convert(DocumentDTO dto) {
         DocumentPTO pto = new DocumentPTO();
-
+        pto.setId(dto.getId());
+        pto.setTitle(dto.getTitle());
+        pto.setDescription(dto.getDescription());
         return pto;
+    }
+
+    private ThemeDisplay getThemeDisplay(RenderRequest renderRequest){
+        return (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
     }
 }

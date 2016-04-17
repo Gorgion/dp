@@ -42,7 +42,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="persistenceProvider" ref="hibernatePersistence"/>
         <property name="jpaProperties" ref="jpaProperties" />
-        <property name="packagesToScan" value="cz.muni.fi.dp.core.entity"/>
+        <property name="packagesToScan" value="cz.muni.fi.dp.core"/>
     </bean>
 
     

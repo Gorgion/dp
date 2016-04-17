@@ -13,15 +13,15 @@
                         ordered="false" sequenceName="HIBERNATE_SEQUENCE" startValue="1" />
     </changeSet>
 
-    <changeSet id="create_table_dummy" author="anonymous">
-        <createTable tableName="DUMMY">
-            <column name="id" type="${long.type}" autoIncrement="true">
-                <constraints primaryKey="true" />
-            </column>
-            <column name="dummy_name" type="${normal.string.type}"/>
-            <column name="dummy_email" type="${normal.string.type}"/>
-        </createTable>
-    </changeSet>
+    <!--<changeSet id="create_table_dummy" author="anonymous">-->
+        <!--<createTable tableName="DUMMY">-->
+            <!--<column name="id" type="${long.type}" autoIncrement="true">-->
+                <!--<constraints primaryKey="true" />-->
+            <!--</column>-->
+            <!--<column name="dummy_name" type="${normal.string.type}"/>-->
+            <!--<column name="dummy_email" type="${normal.string.type}"/>-->
+        <!--</createTable>-->
+    <!--</changeSet>-->
 
 
 

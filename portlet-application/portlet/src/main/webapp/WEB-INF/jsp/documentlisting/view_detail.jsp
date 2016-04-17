@@ -28,8 +28,11 @@ Parametry:
 
     <div class="document-wrapper">
         <h1>${documentDto.title}</h1>
-        <p>${documentDto.description}</p>
+        <c:if test="${not empty documentDto.description}">
+            <p class="alert alert-info">${documentDto.description}</p>
+        </c:if>
         <p><spring:message code="msg-document-detail-size" />: ${documentDto.size}</p>
         <p><spring:message code="msg-document-detail-type" />: ${documentDto.mimeType}</p>
+        <p><spring:message code="msg-document-detail-download" />: <a href="${downloadUrl}">${downloadUrl}</a></p>
     </div>
 </div>

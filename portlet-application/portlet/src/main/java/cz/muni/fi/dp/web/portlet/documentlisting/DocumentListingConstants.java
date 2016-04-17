@@ -23,6 +23,7 @@ public class DocumentListingConstants extends Constants {
     public static final String ATTR_ALL_DOCUMENTS = "allItems";
     public static final String ATTR_DOCUMENT_DTO = "documentDto";
     public static final String ATTR_DOCUMENT_PTO = "documentPto";
+    public static final String ATTR_DOWNLOAD_URL = "downloadUrl";
 
     public static final String PARAM_ID = "entityId";
     public static final String PARAM_DOCUMENT_PTO = "documentPto";

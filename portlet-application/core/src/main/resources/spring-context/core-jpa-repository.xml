@@ -5,10 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
       http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <jpa:repositories
-            base-package="cz.muni.fi.dp.core.repository.**"
-            factory-class="cz.muni.fi.dp.core.repository.generic.CustomJpaRepositoryFactoryBean"
-            repository-impl-postfix="CustomImpl"
-    />
+    <!--<jpa:repositories-->
+            <!--base-package="cz.muni.fi.dp.core.repository.**"-->
+            <!--factory-class="cz.muni.fi.dp.core.repository.generic.CustomJpaRepositoryFactoryBean"-->
+            <!--repository-impl-postfix="CustomImpl"-->
+    <!--/>-->
 
 </beans>

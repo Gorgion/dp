@@ -91,11 +91,10 @@ public class DocumentServiceImpl implements DocumentService {
             FileEntry fileEntry = dlAppLocalService.addFileEntry(documentDTO.getUserId(), documentDTO.getRepositoryId(), documentDTO.getFolderId(), documentDTO.getSourceFileName(),
                                                                  documentDTO.getMimeType(), documentDTO.getTitle(), documentDTO.getDescription(), documentDTO.getChangeLog(), documentDTO.getIs(),
                                                                  documentDTO.getSize(), serviceContext);
+            return fileEntry.getFileEntryId();
         } catch (Exception e) {
             throw new ApplicationException(e);
         }
-
-        return dto.getId();
     }
 
     @Override
