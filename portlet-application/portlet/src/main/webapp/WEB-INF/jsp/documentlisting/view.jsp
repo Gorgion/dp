@@ -9,10 +9,6 @@
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
 <%@ page import="cz.muni.fi.dp.iface.dto.DocumentDTO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="cz.muni.fi.dp.iface.service.DocumentService" %>
-<%@ page import="org.springframework.beans.factory.annotation.Autowired" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="cz.muni.fi.dp.web.portlet.util.DocumentListingADTUtil" %>
 
 <%
     String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
@@ -28,8 +24,7 @@
     <c:choose>
         <c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
             <%
-//                DocumentListingADTUtil documentService = new DocumentListingADTUtil();
-                List<DocumentDTO> entities = (List<DocumentDTO>) request.getAttribute("allItems");//documentService.getAllDocuments();
+                List<DocumentDTO> entities = (List<DocumentDTO>) request.getAttribute("allItems");
             %>
 
             <%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, entities) %>
@@ -72,7 +67,7 @@
                             <portlet:param name="<%= PARAM_ID %>" value="${item.id}"/>
                         </portlet:actionURL>
                         <spring:message var="deleteMsg" code="msg-document-delete-question" arguments="${item.title}"/>
-                        <%-- Je mozne vyuzit i nejaky vlastni TAG: <iba:action-button labelCode="msg-documentlisting-delete-btn" confirmText="${deleteMsg}" url="${deleteUrl}" /> --%>
+
                 <span>
                     <a class="taglib-icon" href="${deleteUrl}">
                         <spring:message var="icoLabel" code="msg-common-btn-delete"/>

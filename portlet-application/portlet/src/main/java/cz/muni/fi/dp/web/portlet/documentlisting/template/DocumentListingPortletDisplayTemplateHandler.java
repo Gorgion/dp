@@ -28,21 +28,21 @@ public class DocumentListingPortletDisplayTemplateHandler extends BasePortletDis
         return "DocumentListingPortlet_WAR_dpportletapplication";
     }
 
-//    public Map<String, TemplateVariableGroup> getTemplateVariableGroups(
-//        long classPK, String language, Locale locale)
-//        throws Exception {
-//
-//        Map<String, TemplateVariableGroup> templateVariableGroups =
-//            super.getTemplateVariableGroups(classPK, language, locale);
-//
-//        TemplateVariableGroup templateVariableGroup =
-//            templateVariableGroups.get("fields");
-//
-//        templateVariableGroup.empty();
-//
-//        templateVariableGroup.addCollectionVariable(
-//            "entities", List.class, PortletDisplayTemplateConstants.ENTRIES,
-//            "entity", DocumentDTO.class, "curEntity", "");
-//        return templateVariableGroups;
-//    }
+    public Map<String, TemplateVariableGroup> getTemplateVariableGroups(
+        long classPK, String language, Locale locale)
+        throws Exception {
+
+        Map<String, TemplateVariableGroup> templateVariableGroups =
+            super.getTemplateVariableGroups(classPK, language, locale);
+
+        TemplateVariableGroup templateVariableGroup =
+            templateVariableGroups.get("fields");
+
+        templateVariableGroup.empty();
+
+        templateVariableGroup.addCollectionVariable(
+            "entities", List.class, PortletDisplayTemplateConstants.ENTRIES,
+            "entity", DocumentDTO.class, "curEntity", "");
+        return templateVariableGroups;
+    }
 }
