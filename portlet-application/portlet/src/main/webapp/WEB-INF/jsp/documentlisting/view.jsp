@@ -48,7 +48,7 @@
                     </portlet:renderURL>
 
                     <liferay-ui:search-container-column-text>
-                        <h1><a href="${detailUrl}"><c:out value="${item.title}"/></a></h1>
+                        <h3><a href="${detailUrl}"><c:out value="${item.title}"/></a></h3>
                         <p><c:out value="${item.description}"/></p>
                     </liferay-ui:search-container-column-text>
 
