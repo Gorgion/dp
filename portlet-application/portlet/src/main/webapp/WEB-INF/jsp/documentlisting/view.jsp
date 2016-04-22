@@ -20,7 +20,7 @@
     <portlet:param name="<%= PARAM_PAGE %>" value="<%= PAGE_UPLOAD %>"/>
 </portlet:renderURL>
 
-<div id="${ns}documentView" class="iba-application portlet-document">
+<div id="${ns}documentView" class="dp-application portlet-document">
     <c:choose>
         <c:when test="<%= portletDisplayDDMTemplateId > 0 %>">
             <%

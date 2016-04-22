@@ -3,5 +3,6 @@
 <display>
     <category name="DP-Package">
         <portlet id="DocumentListingPortlet" />
+        <portlet id="MessageListingPortlet" />
     </category>
 </display>

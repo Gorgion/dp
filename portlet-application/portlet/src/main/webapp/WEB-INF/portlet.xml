@@ -18,7 +18,6 @@
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>VIEW</portlet-mode>
-            <!--<portlet-mode>EDIT</portlet-mode>-->
         </supports>
         <supported-locale>cs</supported-locale>
         <resource-bundle>content.document-listing-portlet</resource-bundle>
@@ -34,5 +33,24 @@
         <security-role-ref>
             <role-name>user</role-name>
         </security-role-ref>
+    </portlet>
+
+    <portlet>
+        <portlet-name>MessageListingPortlet</portlet-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>/WEB-INF/spring-context/portlet/message-listing-portlet.xml</value>
+        </init-param>
+        <init-param>
+            <name>config-template</name>
+            <value>/WEB-INF/jsp/messagelisting/config.jsp</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+        </supports>
+        <supported-locale>cs</supported-locale>
+        <resource-bundle>content.message-listing-portlet</resource-bundle>
     </portlet>
 </portlet-app>

@@ -10,18 +10,21 @@
         <instanceable>false</instanceable>
         <scopeable>false</scopeable>
         <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        
+        <css-class-wrapper>dp-application portlet-DocumentListingPortlet</css-class-wrapper>
+    </portlet>
+
+    <portlet>
+        <portlet-name>MessageListingPortlet</portlet-name>
+
+        <configuration-action-class>cz.muni.fi.dp.web.portlet.messagelisting.ConfigurationActionImpl</configuration-action-class>
+        <template-handler>cz.muni.fi.dp.web.portlet.messagelisting.template.MessageListingPortletDisplayTemplateHandler</template-handler>
+        <action-url-redirect>true</action-url-redirect>
+        <instanceable>false</instanceable>
+        <scopeable>false</scopeable>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
 
         <header-portlet-css>/css/application.css</header-portlet-css>
-        <header-portlet-css>/css/portlet-document.css</header-portlet-css>
-        
-        <header-portlet-javascript>/js/components/jquery-1.8.2.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/components/jquery-ui-1.9.1.custom.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/components/jquery.validate.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/global-init.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/portlets/common/portlet-reusable.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/portlets/document/components/init-form.js</header-portlet-javascript>
-        <header-portlet-javascript>/js/portlets/document/init-view.js</header-portlet-javascript>
-        
         <css-class-wrapper>dp-application portlet-DocumentListingPortlet</css-class-wrapper>
     </portlet>
 
