@@ -28,6 +28,8 @@
             <%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, entities) %>
         </c:when>
         <c:otherwise>
+            <spring:message var="title" code="msg-message-header"/>
+            <liferay-ui:header title="${title}" />
             <c:if test="${not empty resultMsg}">
                 <div><spring:message code="${resultMsg}"/></div>
             </c:if>
@@ -38,7 +40,7 @@
                 <liferay-ui:search-container-row className="com.liferay.portlet.messageboards.model.MBMessage" modelVar="item">
 
                     <liferay-ui:search-container-column-text>
-                        <h3><a href="${detailUrl}"><c:out value="${item.subject}"/></a></h3>
+                        <h3><c:out value="${item.subject}"/></h3>
                         <p><c:out value="${item.body}"/></p>
                     </liferay-ui:search-container-column-text>
                 </liferay-ui:search-container-row>

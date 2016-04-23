@@ -30,6 +30,8 @@
             <%= PortletDisplayTemplateUtil.renderDDMTemplate(pageContext, portletDisplayDDMTemplateId, entities) %>
         </c:when>
         <c:otherwise>
+            <spring:message var="title" code="msg-document-header" />
+            <liferay-ui:header title="${title}"/>
             <c:if test="${not empty resultMsg}">
                 <div><spring:message code="${resultMsg}"/></div>
             </c:if>
