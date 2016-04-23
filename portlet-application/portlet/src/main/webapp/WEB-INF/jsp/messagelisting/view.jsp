@@ -34,19 +34,49 @@
                 <div><spring:message code="${resultMsg}"/></div>
             </c:if>
 
-            <liferay-ui:search-container emptyResultsMessage="msg-message-no-items">
-                <liferay-ui:search-container-results results="${allItems}" total="${fn:length(allItems)}"/>
-
-                <liferay-ui:search-container-row className="com.liferay.portlet.messageboards.model.MBMessage" modelVar="item">
-
-                    <liferay-ui:search-container-column-text>
-                        <h3><c:out value="${item.subject}"/></h3>
-                        <p><c:out value="${item.body}"/></p>
-                    </liferay-ui:search-container-column-text>
-                </liferay-ui:search-container-row>
-
-                <liferay-ui:search-iterator paginate="false"/>
-            </liferay-ui:search-container>
+            <c:if test="${empty allItems}">
+                <div class="alert-info alert">
+                    <spring:message code="msg-message-no-items" />
+                </div>
+            </c:if>
+            <table>
+                <c:forEach var="item" items="${allItems}">
+                    <tr>
+                        <td>
+                            <h3><c:out value="${item.subject}"/></h3>
+                            <p><c:out value="${item.body}"/></p>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
         </c:otherwise>
     </c:choose>
 </div>
+
+<script type="text/javascript">
+    AUI().ready('node', function () {
+        var roundMsg = parseInt(localStorage.getItem("roundMsg"));
+        var arrayMsg = JSON.parse(localStorage.getItem("arrayMsg"));
+        var arrayAP = JSON.parse(localStorage.getItem("arrayAP"));
+        if(isNaN(roundMsg)) {
+            roundMsg = 0;
+        }
+        if (arrayMsg == null) {
+            arrayMsg = [];
+        }
+        if (arrayAP == null) {
+            arrayAP = [];
+        }
+        if(roundMsg < 50) {
+            arrayMsg.push(getDuration("MessageListingPortlet_WAR_dpportletapplication"));
+            arrayAP.push(getDuration("Asset Publisher"));
+            localStorage.setItem("arrayMsg", JSON.stringify(arrayMsg));
+            localStorage.setItem("arrayAP", JSON.stringify(arrayAP));
+            localStorage.setItem("roundMsg", ++roundMsg);
+
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+        }
+    });
+</script>

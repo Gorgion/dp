@@ -10,7 +10,9 @@
         <instanceable>false</instanceable>
         <scopeable>false</scopeable>
         <requires-namespaced-parameters>false</requires-namespaced-parameters>
-        
+
+        <header-portlet-javascript>/js/application.js</header-portlet-javascript>
+
         <css-class-wrapper>dp-application portlet-DocumentListingPortlet</css-class-wrapper>
     </portlet>
 
@@ -24,7 +26,8 @@
         <scopeable>false</scopeable>
         <requires-namespaced-parameters>false</requires-namespaced-parameters>
 
-        <header-portlet-css>/css/application.css</header-portlet-css>
+        <header-portlet-javascript>/js/application.js</header-portlet-javascript>
+
         <css-class-wrapper>dp-application portlet-DocumentListingPortlet</css-class-wrapper>
     </portlet>
 
