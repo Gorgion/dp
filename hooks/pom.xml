@@ -30,6 +30,6 @@
     </build>
 
   <modules>
-    <module>example-hook</module>
+    <module>mbmessage-hook</module>
   </modules>
 </project>

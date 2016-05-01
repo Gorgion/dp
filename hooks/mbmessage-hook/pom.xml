@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>dp-example-hook</artifactId>
+    <artifactId>dp-mbmessage-hook</artifactId>
     <name>${project.artifactId}</name>
 
     <packaging>war</packaging>
