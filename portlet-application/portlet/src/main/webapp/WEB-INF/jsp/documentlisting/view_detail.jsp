@@ -1,14 +1,3 @@
-<%-- ==========================================================================================
- *   IBA CZ Confidential
- *   Copyright IBA CZ 2014 ALL RIGHTS RESERVED
- *   The source code for this program is not published or otherwise divested of its trade secrets.
- * =============================================================================================
-
-JSP pro výpis detailu.
-
-Parametry:
-    DummyDto documentDTO   - DTO objekt pro výpis
---%>
 <%--@elvariable id="dummyDto" type="cz.muni.fi.dp.iface.dto.DocumentDTO"--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 

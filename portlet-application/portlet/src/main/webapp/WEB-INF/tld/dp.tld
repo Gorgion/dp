@@ -6,10 +6,4 @@
 
     <short-name>dp</short-name>
 
-    <!-- Project TAGs -->
-    <tag-file>
-        <name>action-button</name>
-        <path>/WEB-INF/tags/action-button.tag</path>
-    </tag-file>
-
 </taglib>

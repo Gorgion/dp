@@ -1,5 +1,5 @@
 /** Global namespace definition */
-window.IBA = window.IBA || {};
+window.DP = window.DP || {};
 /** Common functions. These function are not bound to any portlet. */
 jQuery(function () {
 

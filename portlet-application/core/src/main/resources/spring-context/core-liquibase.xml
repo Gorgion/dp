@@ -9,7 +9,6 @@
         <property name="changeLog" value="classpath:db-scripts/db-changelog.xml" />
         <property name="shouldRun" value="true"/>
         <property name="contexts" value="DEV" /> <!-- contexts specifies the runtime contexts to use. -->
-        <!-- <property name="contexts" value="$${ibapackage.key.liquibase.context}" /> contexts specifies the runtime contexts to use. -->
     </bean>
 
 

@@ -15,11 +15,6 @@
     <!--Enables @Autowired annotation-->
     <context:annotation-config/>
 
-    <!-- Action Redirect Support -->
-    <!--
-    <aop:aspectj-autoproxy />
-    <bean class="eu.ibacz.commons.portlet.ActionRedirectAspect" />
-    -->
 
     <!-- JSR-303 validation support -->
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">

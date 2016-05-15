@@ -577,7 +577,6 @@
   <modules>
     <module>portlet-application</module>
     <module>hooks</module>
-    <!--<module>themes</module>-->
     <module>ext</module>
   </modules>
 </project>
